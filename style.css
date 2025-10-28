@@ -1,6 +1,3 @@
-/* -------------------------------------
-   VARIABLES & RESET
--------------------------------------- */
 :root {
   --beige: #E8D9C0;
   --rouge-brique: #C3534B;
@@ -10,11 +7,8 @@
   --blanc: #FFFFFF;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: "Poppins", sans-serif;
@@ -22,64 +16,56 @@ body {
   color: var(--brun-profond);
   line-height: 1.7;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
-/* -------------------------------------
-   HERO SECTION
--------------------------------------- */
+/* HERO */
 .hero {
   height: 100vh;
   background: url("./images/photo1.jpg") center/cover no-repeat;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(49, 39, 32, 0.45);
+  background: rgba(49, 39, 32, 0.4);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   color: var(--blanc);
-  animation: fadeIn 1.6s ease;
+  animation: fadeIn 1.8s ease;
 }
 
-.logo {
-  width: 220px;
+.hero .logo {
+  width: 200px;
   margin-bottom: 1rem;
 }
 
 .hero h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
-  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-top: 0.6rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
-/* -------------------------------------
-   BUTTONS
--------------------------------------- */
-.btn,
-.btn-outline {
+.btn, .btn-outline {
   display: inline-block;
-  padding: 0.9rem 2rem;
-  border-radius: 40px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
   font-weight: 600;
-  text-decoration: none;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn {
@@ -101,104 +87,46 @@ body {
   color: var(--blanc);
 }
 
-/* -------------------------------------
-   SECTIONS
--------------------------------------- */
+/* ABOUT */
 section {
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
-h2 {
+.about h2, .menu h2, .contact h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   color: var(--brun-cafe);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-p {
-  max-width: 800px;
+.about p {
+  max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
 }
 
-/* -------------------------------------
-   MENU
--------------------------------------- */
+/* MENU */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin: 3rem 0;
 }
 
 .menu-item {
-  background: var(--blanc);
+  background-color: var(--blanc);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
 }
 
 .menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
 }
 
-/* -------------------------------------
-   STORY / TEAM
--------------------------------------- */
-.story {
-  background-color: #f9f7f3;
-}
-
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.person {
-  text-align: center;
-  max-width: 200px;
-}
-
-.person img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--rouge-brique);
-  margin-bottom: 0.8rem;
-}
-
-.person h4 {
-  font-size: 1.1rem;
-  color: var(--brun-profond);
-}
-
-/* -------------------------------------
-   EVENTS
--------------------------------------- */
-.events {
-  background: var(--vert-olive);
-  color: var(--brun-profond);
-}
-
-.events h2 {
-  color: var(--brun-cafe);
-}
-
-.events p {
-  color: var(--brun-profond);
-  margin-bottom: 2rem;
-}
-
-/* -------------------------------------
-   GALLERY
--------------------------------------- */
+/* GALLERY */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -209,7 +137,7 @@ p {
   width: 100%;
   height: 360px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: transform 0.4s ease;
 }
 
@@ -217,44 +145,27 @@ p {
   transform: scale(1.03);
 }
 
-/* -------------------------------------
-   CONTACT
--------------------------------------- */
+/* CONTACT */
+.contact p {
+  margin: 0.5rem 0;
+}
+
 .contact a {
   color: var(--rouge-brique);
   font-weight: 500;
 }
 
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* -------------------------------------
-   FOOTER
--------------------------------------- */
+/* FOOTER */
 footer {
-  background: var(--brun-cafe);
+  background-color: var(--brun-cafe);
   color: var(--beige);
   text-align: center;
   padding: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
 
-/* -------------------------------------
-   ANIMATIONS
--------------------------------------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 1s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* ANIMATION */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
