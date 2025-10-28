@@ -3,65 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Station – Café & Petite restauration à Genval</title>
-  <style>
-    body { font-family: "Poppins", sans-serif; margin: 0; padding: 0; color: #333; }
-    header { background: #f6f3ee; text-align: center; padding: 80px 20px; }
-    header h1 { font-size: 2.5em; margin: 0; color: #3c3b3a; }
-    header p { font-size: 1.1em; max-width: 600px; margin: 10px auto 30px; line-height: 1.6; }
-    section { padding: 60px 20px; max-width: 900px; margin: auto; }
-    h2 { color: #3c3b3a; border-bottom: 2px solid #e5ded3; padding-bottom: 10px; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 5px 0; }
-    footer { background: #f6f3ee; text-align: center; padding: 30px 20px; font-size: 0.9em; color: #777; }
-    a.button { display: inline-block; background: #8b6f47; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; margin-top: 20px; }
-    a.button:hover { background: #7a5f3c; }
-  </style>
+  <title>La Station – Café & petite restauration à Genval</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>☕ La Station – Café & Petite restauration à Genval</h1>
-  <p>Entre gare et lac, La Station est un lieu convivial où l’on s’arrête pour un café, un lunch ou une gourmandise. <br>
-  Petit-déjeuners, sandwiches, salades, cookies maison et cafés de spécialité dans une ambiance authentique et lumineuse.</p>
-  <p>🕰️ Lun–Ven : 7h30–17h &nbsp; | &nbsp; 📍 Gare de Genval &nbsp; | &nbsp; 🍪 Sur place & à emporter</p>
-  <a href="#menu" class="button">Voir notre menu</a>
-</header>
+  <!-- HEADER -->
+  <header class="fade-in">
+    <h1>Découvrir La Station</h1>
+    <p>La Station vous accueille pour un café, un petit déjeuner ou un lunch maison dans une ambiance conviviale et authentique.</p>
+  </header>
 
-<section id="menu">
-  <h2>🌿 Notre carte – fraîche, locale & faite maison</h2>
-  <p>Nous travaillons avec des produits frais et locaux, dans une cuisine simple et généreuse. Notre carte évolue selon les saisons et les envies du moment.</p>
-  <ul>
-    <li>☕ <b>Boissons chaudes :</b> Cappuccino, espresso, café latte, chai, matcha latte, chocolat chaud</li>
-    <li>🥐 <b>Petits-déjeuners & Viennoiseries :</b> Croissants, assiette matin sucrée/salée, granola bowl</li>
-    <li>🥗 <b>Lunchs & salades :</b> Sandwichs maison, croques, salades du moment, soupe du jour</li>
-    <li>🍪 <b>Gourmandises maison :</b> Cookies, cakes, douceurs du jour</li>
-    <li>🧃 <b>Boissons fraîches & locales :</b> Limonade maison, jus pressés, kombucha, bières locales, vins</li>
-  </ul>
-</section>
+  <!-- GALERIE -->
+  <section class="fade-in">
+    <h2>Galerie</h2>
+    <div class="grid">
+      <img src="./images/photo1.jpg" alt="Intérieur du café La Station" />
+      <img src="./images/photo2.jpg" alt="Petit déjeuner à La Station" />
+      <img src="./images/photo3.jpg" alt="Lunch maison à La Station" />
+    </div>
+  </section>
 
-<section id="team">
-  <h2>👋 Une aventure locale et humaine</h2>
-  <p>La Station, c’est le projet de Marine et Augustin, rejoints par une équipe passionnée.  
-  Nous avons voulu créer un lieu chaleureux, où les gens de passage, les télétravailleurs et les familles se sentent comme à la maison.</p>
-</section>
+  <!-- CONTACT -->
+  <section class="fade-in contact">
+    <h2>Contact</h2>
+    <p><strong>Email :</strong> <a href="mailto:lastation.genval@gmail.com">lastation.genval@gmail.com</a></p>
+    <p><strong>Instagram :</strong> <a href="https://instagram.com/lastation.genval" target="_blank">@lastation.genval</a></p>
+    <p><strong>Adresse :</strong> Gare de Genval – Belgique</p>
 
-<section id="infos">
-  <h2>📍 Infos pratiques</h2>
-  <p>
-    📍 <b>Adresse :</b> Gare de Genval – 1332 Rixensart<br>
-    🕒 <b>Horaires :</b> Lundi à vendredi – 7h30 à 17h | Samedi & dimanche – 12h à 17h<br>
-    📧 <b>Email :</b> <a href="mailto:lastation.genval@gmail.com">lastation.genval@gmail.com</a><br>
-    💬 <b>Instagram :</b> <a href="https://instagram.com/" target="_blank">@lastation.genval</a><br>
-    🚲 Accès facile : train, vélo, parking à proximité
-  </p>
-  <a href="mailto:lastation.genval@gmail.com" class="button">Nous écrire</a>
-</section>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.694739982145!2d4.4934!3d50.7125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c17e86b5f7f3df%3A0x91d8e9e29354f40e!2sGare%20de%20Genval!5e0!3m2!1sfr!2sbe!4v1718217848"
+        width="100%" height="250" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </section>
 
-<footer>
-  © 2025 La Station Genval – Café & Petite restauration <br>
-  Site réalisé avec ☕ et 🌿 à Genval
-</footer>
+  <!-- FOOTER -->
+  <footer class="fade-in">
+    <p>© 2025 La Station Genval – Petit déjeuner • Lunch • Café • Gourmandises</p>
+  </footer>
+
+  <!-- ANIMATION -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
 
 </body>
 </html>
