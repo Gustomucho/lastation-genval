@@ -1,137 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Station – Café & petite restauration à Genval</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Station Genval – Café & Petite Restauration</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- NAVBAR -->
-  <nav class="fade-in">
-    <h1>☕ La Station</h1>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">☕ La Station</div>
     <ul>
       <li><a href="#about">À propos</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#team">Équipe</a></li>
-      <li><a href="#events">Événements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HEADER -->
-  <header class="hero fade-in">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="overlay"></div>
     <div class="hero-text">
-      <h2>Découvrir La Station</h2>
-      <p>Un café, un petit déjeuner ou un lunch maison dans une ambiance conviviale et authentique à deux pas du lac de Genval.</p>
+      <h1>Découvrir La Station</h1>
+      <p>La Station vous accueille pour un café, un petit déjeuner ou un lunch maison dans une ambiance conviviale et authentique.</p>
       <a href="#menu" class="btn-primary">Découvrir le menu</a>
     </div>
   </header>
 
-  <!-- À PROPOS -->
+  <!-- ABOUT -->
   <section id="about" class="fade-in">
     <h2>À propos</h2>
     <p>
-      Nichée au cœur de la gare de Genval, <strong>La Station</strong> est un café de quartier chaleureux,
-      imaginé pour accueillir voyageurs, familles, télétravailleurs et amateurs de bons produits.
-      Tout y est fait maison, avec soin et simplicité.
-    </p>
-    <p>
-      <em>Viennoiseries dorées, cafés de spécialité, soupes et sandwiches frais : 
-      ici, chaque détail compte pour offrir une pause de qualité.</em>
+      Située à la gare de Genval, <strong>La Station</strong> est un lieu de vie où se croisent voyageurs, familles et télétravailleurs.
+      Un endroit chaleureux pour savourer un café de spécialité, un lunch maison ou une gourmandise artisanale, dans un cadre simple et lumineux.
     </p>
   </section>
 
-  <!-- GALERIE -->
+  <!-- GALLERY -->
   <section class="gallery fade-in">
-    <img src="./images/photo1.jpg" alt="Intérieur du café La Station" />
-    <img src="./images/photo2.jpg" alt="Petit déjeuner à La Station" />
-    <img src="./images/photo3.jpg" alt="Lunch maison à La Station" />
+    <img src="./images/photo1.jpg" alt="Intérieur du café">
+    <img src="./images/photo2.jpg" alt="Petit déjeuner maison">
+    <img src="./images/photo3.jpg" alt="Lunch gourmand à La Station">
   </section>
 
   <!-- MENU -->
   <section id="menu" class="fade-in">
     <h2>Menu</h2>
     <p>Nos produits changent au fil des saisons. Voici un aperçu de nos incontournables :</p>
-
     <div class="menu-grid">
       <div class="menu-item">
         <h3>☕ Boissons chaudes</h3>
-        <p>Cappuccino, Latte, Espresso, Chocolat chaud, Matcha, Chai</p>
+        <p>Cappuccino, Café filtre, Latte, Chocolat chaud, Matcha, Chai</p>
       </div>
       <div class="menu-item">
-        <h3>🍽️ Lunch & petit-déj</h3>
-        <p>Sandwichs maison, Croque La Station, Soupes, Assiettes salées et sucrées</p>
+        <h3>🥐 Petit-déjeuner</h3>
+        <p>Viennoiseries, Granola bowl, Assiettes salée & sucrée</p>
+      </div>
+      <div class="menu-item">
+        <h3>🥪 Lunch</h3>
+        <p>Sandwichs maison, Croque La Station, Soupes, Salades du jour</p>
       </div>
       <div class="menu-item">
         <h3>🍰 Gourmandises</h3>
-        <p>Cookies, Cakes, Viennoiseries, Granola bowl</p>
+        <p>Cookies, Cakes, Cinnamon rolls & autres douceurs</p>
       </div>
       <div class="menu-item">
-        <h3>🥤 Softs & bières locales</h3>
+        <h3>🍺 Softs & bières locales</h3>
         <p>Limonades maison, Bionina, Paola Cola, Lutgarde, Mobius</p>
       </div>
     </div>
-
     <a href="./menu.pdf" class="btn-secondary" target="_blank">Voir le menu complet</a>
   </section>
 
-  <!-- ÉQUIPE -->
+  <!-- TEAM -->
   <section id="team" class="fade-in">
     <h2>L’équipe</h2>
     <div class="team-grid">
       <div class="person">
-        <img src="./images/marine.jpg" alt="Marine" />
+        <img src="./images/marine.jpg" alt="Marine">
         <h3>Marine</h3>
-        <p>Co-gérante • Accueil & service</p>
+        <p>Accueil & service</p>
       </div>
       <div class="person">
-        <img src="./images/delphine.jpg" alt="Delphine" />
+        <img src="./images/delphine.jpg" alt="Delphine">
         <h3>Delphine</h3>
-        <p>Co-gérante • Cuisine & coordination</p>
+        <p>Cuisine & coordination</p>
       </div>
     </div>
-    <p>Et une super équipe d’étudiants pour vous accueillir chaque semaine avec le sourire !</p>
-  </section>
-
-  <!-- ÉVÉNEMENTS -->
-  <section id="events" class="fade-in">
-    <h2>Privatisations & commandes spéciales</h2>
-    <p>
-      La Station accueille vos petits événements : brunchs, réunions, expositions, ateliers créatifs ou anniversaires.
-      Nous réalisons également des <strong>commandes spéciales</strong> (cookies, cakes, viennoiseries, lunchs traiteur…).
-    </p>
-    <a href="#contact" class="btn-primary">Demander un devis</a>
+    <p>Deux gérantes passionnées, entourées d’étudiants souriants et motivés ❤️</p>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="fade-in contact">
-    <h2>Contact</h2>
-    <p><strong>Adresse :</strong> Rue de la Station 38, 1332 Rixensart (Gare de Genval)</p>
-    <p><strong>Email :</strong> <a href="mailto:lastation.genval@gmail.com">lastation.genval@gmail.com</a></p>
-    <p><strong>Instagram :</strong> <a href="https://instagram.com/lastation.genval" target="_blank">@lastation.genval</a></p>
+  <section id="contact" class="fade-in">
+    <h2>Privatisations & Contact</h2>
+    <p>
+      La Station accueille vos petits événements : brunchs, réunions, ateliers, anniversaires…
+      Nous réalisons aussi des commandes spéciales (cookies, cakes, lunchs à emporter).
+    </p>
+    <a href="mailto:lastation.genval@gmail.com" class="btn-primary">Demander un devis</a>
 
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps?q=La+Station+Genval,+Rue+de+la+Station+38,+1332+Rixensart&output=embed"
-        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-      </iframe>
+    <div class="infos">
+      <p><strong>Adresse :</strong> Rue de la Station 38, 1332 Rixensart</p>
+      <p><strong>Instagram :</strong> <a href="https://instagram.com/lastation.genval" target="_blank">@lastation.genval</a></p>
     </div>
+
+    <iframe
+      src="https://www.google.com/maps?q=La+Station+Genval,+Rue+de+la+Station+38,+1332+Rixensart&output=embed"
+      width="100%" height="300" style="border:0; border-radius:12px; margin-top:1rem;" allowfullscreen loading="lazy">
+    </iframe>
   </section>
 
   <!-- FOOTER -->
-  <footer class="fade-in">
-    <p>© 2025 La Station Genval – Petit déjeuner • Lunch • Café • Gourmandises</p>
+  <footer>
+    © 2025 La Station Genval – Petit déjeuner • Lunch • Café • Gourmandises
   </footer>
 
-  <!-- ANIMATION -->
+  <!-- Fade-in Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.fade-in');
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-in");
       const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add("visible");
         });
       }, { threshold: 0.2 });
       elements.forEach(el => observer.observe(el));
