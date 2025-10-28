@@ -1,51 +1,264 @@
-body {
+/* ----------------------------
+   PALETTE LA STATION
+---------------------------- */
+:root {
+  --rouge-brique: #C3534B;
+  --brun-cafe: #592E28;
+  --beige: #E8D9C0;
+  --vert-olive: #A6AA90;
+  --brun-profond: #312720;
+  --rouge-terre: #A13416;
+  --blanc: #fff;
+}
+
+/* ----------------------------
+   RESET & BASE
+---------------------------- */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #faf9f7;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  background-color: var(--beige);
+  color: var(--brun-profond);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--brun-cafe);
+}
+
+a {
+  text-decoration: none;
+  color: var(--rouge-brique);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--rouge-terre);
+}
+
+/* ----------------------------
+   NAVBAR
+---------------------------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: var(--beige);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav h1 {
+  font-size: 1.4rem;
+  color: var(--brun-profond);
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 500;
+  color: var(--brun-profond);
+}
+
+nav ul li a:hover {
+  color: var(--rouge-terre);
+}
+
+/* ----------------------------
+   HERO SECTION
+---------------------------- */
+.hero {
+  background: url("./images/photo1.jpg") center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  scroll-behavior: smooth;
+  color: var(--blanc);
+  position: relative;
 }
 
-header {
-  padding: 80px 20px;
-  background: white;
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(49, 39, 32, 0.45);
 }
 
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 2rem;
 }
 
-.grid {
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------------------
+   BOUTONS
+---------------------------- */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--rouge-brique);
+  color: var(--blanc);
+}
+
+.btn-primary:hover {
+  background-color: var(--rouge-terre);
+}
+
+.btn-secondary {
+  border: 2px solid var(--brun-cafe);
+  color: var(--brun-cafe);
+}
+
+.btn-secondary:hover {
+  background-color: var(--brun-cafe);
+  color: var(--blanc);
+}
+
+/* ----------------------------
+   SECTIONS GÉNÉRALES
+---------------------------- */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ----------------------------
+   GALERIE
+---------------------------- */
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 2rem;
 }
 
-img {
+.gallery img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
 }
 
-img:hover {
+.gallery img:hover {
   transform: scale(1.03);
 }
 
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 0.9em;
-  background: white;
+/* ----------------------------
+   MENU GRID
+---------------------------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
+.menu-item {
+  background-color: var(--blanc);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ----------------------------
+   ÉQUIPE
+---------------------------- */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.person {
+  background-color: var(--blanc);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 240px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.person img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* ----------------------------
+   MAP & CONTACT
+---------------------------- */
+.contact .map {
+  margin-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ----------------------------
+   FOOTER
+---------------------------- */
+footer {
+  background-color: var(--brun-cafe);
+  color: var(--beige);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ----------------------------
+   ANIMATION D’APPARITION
+---------------------------- */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.visible {
