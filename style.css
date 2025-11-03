@@ -43,6 +43,22 @@ body {
   color: var(--brun-profond);
   text-decoration: none;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--rouge-brique);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover,
@@ -155,14 +171,21 @@ h2 {
 
 /* CONTACT */
 .contact p { margin: 0.5rem 0; }
+
 .contact a {
   color: var(--rouge-brique);
   font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.contact a:hover {
+  opacity: 0.8;
 }
 
 /* MAP */
 .map iframe {
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border-radius: 10px;
 }
 
 /* FOOTER */
@@ -172,15 +195,29 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
 
 footer a {
   color: var(--beige);
   text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--beige);
+  transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
 }
 
 .socials {
@@ -188,6 +225,10 @@ footer a:hover {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+}
+
+.footer-link {
+  font-weight: 500;
 }
 
 /* ANIMATION */
@@ -201,4 +242,5 @@ footer a:hover {
   .hero h1 { font-size: 2.2rem; }
   section { padding: 3rem 1.5rem; }
   .navbar { gap: 1rem; }
+  footer { font-size: 0.85rem; }
 }
