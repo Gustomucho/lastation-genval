@@ -91,8 +91,8 @@ body {
 }
 
 .logo {
-  width: 30vw; /* 30% de la largeur de la fenêtre */
-  max-width: 280px; /* limite pour éviter qu’il soit trop grand sur grand écran */
+  width: 45vw; /* 30% de la largeur de la fenêtre */
+  max-width: 300px; /* limite pour éviter qu’il soit trop grand sur grand écran */
   margin-bottom: 1rem;
 }
 
