@@ -260,6 +260,11 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.05);
 }
 
+footer p, 
+footer .footer-text {
+  color: var(--brun-cafe);
+}
+
 footer a {
   color: var(--brun-cafe);
   text-decoration: none;
