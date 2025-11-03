@@ -249,8 +249,8 @@ h2 {
   width: 100%;
 }
 
-/* --- FOOTER --- */
-footer {
+/* --- FOOTER (corrigé pour .site-footer) --- */
+.site-footer {
   background-color: var(--blanc);
   color: var(--brun-cafe);
   text-align: center;
@@ -260,12 +260,12 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.05);
 }
 
-footer p, 
-footer .footer-text {
+.site-footer p,
+.site-footer .footer-text {
   color: var(--brun-cafe);
 }
 
-footer a {
+.site-footer a {
   color: var(--brun-cafe);
   text-decoration: none;
   position: relative;
@@ -273,7 +273,7 @@ footer a {
   font-weight: 500;
 }
 
-footer a::after {
+.site-footer a::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -284,22 +284,22 @@ footer a::after {
   transition: width 0.3s ease;
 }
 
-footer a:hover {
+.site-footer a:hover {
   color: var(--rouge-brique);
 }
 
-footer a:hover::after {
+.site-footer a:hover::after {
   width: 100%;
 }
 
-.socials {
+.site-footer .socials {
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
-.footer-link {
+.site-footer .footer-link {
   font-weight: 600;
 }
 
@@ -314,7 +314,7 @@ footer a:hover::after {
   .hero h1 { font-size: 2.2rem; }
   section { padding: 2.5rem 1.5rem; }
   .navbar { gap: 1rem; }
-  footer { font-size: 0.85rem; }
+  .site-footer { font-size: 0.85rem; }
   .contact {
     padding-top: 1rem;
     padding-bottom: 1rem;
