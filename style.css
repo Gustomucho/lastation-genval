@@ -206,7 +206,7 @@ h2 {
 /* --- FOOTER --- */
 footer {
   background-color: var(--blanc);
-  color: var(--rouge-brique);
+  color: var(--blanc);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
@@ -215,7 +215,7 @@ footer {
 }
 
 footer a {
-  color: var(--rouge-brique);
+  color: var(--blanc);
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
