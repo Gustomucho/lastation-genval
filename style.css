@@ -17,7 +17,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background: var(--blanc);
-  color: var(--beige);
+  color: var(--blanc);
   line-height: 1.7;
   overflow-x: hidden;
 }
