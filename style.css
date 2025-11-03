@@ -228,7 +228,7 @@ h2 {
 }
 
 .mentions a {
-  color: var(--brun-cafe);
+  color: var(--rouge-brique);
   font-weight: 500;
   text-decoration: none;
   position: relative;
@@ -252,7 +252,7 @@ h2 {
 /* --- FOOTER --- */
 footer {
   background-color: var(--blanc);
-  color: var(--blanc);
+  color: var(--brun-cafe);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
@@ -261,7 +261,7 @@ footer {
 }
 
 footer a {
-  color: var(--blanc);
+  color: var(--brun-cafe);
   text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
@@ -275,8 +275,12 @@ footer a::after {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--brun-cafe);
+  background-color: var(--rouge-brique);
   transition: width 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--rouge-brique);
 }
 
 footer a:hover::after {
