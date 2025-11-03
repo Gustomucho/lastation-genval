@@ -142,13 +142,14 @@ body {
 
 .btn-map {
   margin-top: 1rem;
-  background-color: var(--brun-cafe);
-  color: var(--beige);
+  background-color: var(--rouge-brique);
+  color: var(--blanc);
 }
 
 .btn-map:hover {
-  background-color: var(--rouge-brique);
+  background-color: var(--brun-cafe);
 }
+
 
 /* SECTIONS */
 section {
