@@ -91,8 +91,16 @@ body {
 }
 
 .logo {
-  width: 180px;
+  width: 30vw; /* 30% de la largeur de la fenêtre */
+  max-width: 280px; /* limite pour éviter qu’il soit trop grand sur grand écran */
   margin-bottom: 1rem;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .logo {
+    width: 140px;
+  }
 }
 
 .hero h1 {
