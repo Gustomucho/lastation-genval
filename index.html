@@ -1,183 +1,66 @@
-:root {
-  --beige: #E8D9C0;
-  --rouge-brique: #C3534B;
-  --brun-cafe: #592E28;
-  --brun-profond: #312720;
-  --vert-olive: #A6AA90;
-  --blanc: #FFFFFF;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Station Genval – Café & Petite Restauration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="./images/logo.png" alt="La Station Genval Logo" class="logo">
+      <h1>La Station Genval</h1>
+      <p>Petit déjeuner • Lunch • Café • Gourmandises</p>
+      <p class="opening-hours">
+        Lundi – Vendredi : 7h30 – 17h<br>
+        Dimanche : Brunch gourmand
+      </p>
+      <a href="#about" class="btn">Découvrir La Station</a>
+      <a href="#about" class="btn">...Et le menu</a>
+    </div>
+  </header>
 
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="text">
+      <h2>Un café de gare pas comme les autres</h2>
+      <p>
+        Située à la gare de Genval, <strong>La Station</strong> est un lieu de vie chaleureux et authentique.  
+        Ici, tout est fait maison : des cafés de spécialité torréfiés localement aux plats simples et savoureux préparés avec soin.
+        Que vous soyez de passage, en télétravail ou en famille, La Station est votre escale gourmande à toute heure de la journée.
+      </p>
+    </div>
+  </section>
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--beige);
-  color: var(--brun-profond);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+  <!-- MENU -->
+  <section id="menu" class="menu">
+    <h2>Notre carte</h2>
+    <a href="./menu.pdf" class="btn-outline" target="_blank">Voir le menu complet</a>
+  </section>
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url("./images/photo1.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-}
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(49, 39, 32, 0.4);
-}
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact & Accès</h2>
+    <p>Rue de la Station 38, 1332 Rixensart</p>
+    <p><a href="mailto:lastation.genval@gmail.com">lastation.genval@gmail.com</a></p>
+    <p><a href="https://instagram.com/lastation.genval" target="_blank">@lastation.genval</a></p>
+    <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank" class="btn">Voir sur Google Maps</a>
+  </section>
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: var(--blanc);
-  animation: fadeIn 1.8s ease;
-}
-
-.hero .logo {
-  width: 200px;
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.opening-hours {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  padding: 0.8rem 1.6rem;
-  border-radius: 999px;
-  background: rgba(232, 217, 192, 0.15);
-  border: 1px solid rgba(232, 217, 192, 0.3);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.btn, .btn-outline {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.btn {
-  background-color: var(--rouge-brique);
-  color: var(--blanc);
-}
-
-.btn:hover {
-  background-color: var(--brun-cafe);
-}
-
-.btn-outline {
-  color: var(--brun-cafe);
-  border: 2px solid var(--brun-cafe);
-}
-
-.btn-outline:hover {
-  background-color: var(--brun-cafe);
-  color: var(--blanc);
-}
-
-/* ABOUT */
-section {
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.about h2, .menu h2, .contact h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  color: var(--brun-cafe);
-  margin-bottom: 1rem;
-}
-
-.about p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-}
-
-/* MENU */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.menu-item {
-  background-color: var(--blanc);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-6px);
-}
-
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.4s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* CONTACT */
-.contact p {
-  margin: 0.5rem 0;
-}
-
-.contact a {
-  color: var(--rouge-brique);
-  font-weight: 500;
-}
-
-/* FOOTER */
-footer {
-  background-color: var(--brun-cafe);
-  color: var(--beige);
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  <!-- FOOTER -->
+  <footer>
+    <div class="socials">
+      <a href="https://www.instagram.com/lastation.genval" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61577733796335" target="_blank">Facebook</a>
+      <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank">Google Maps</a>
+    </div>
+    <p class="footer-text">
+      © 2025 La Station Genval – Petit déjeuner • Lunch • Café • Gourmandises<br>
+      <a href="mentions-legales.html" class="footer-link">Mentions légales</a>
+    </p>
+  </footer>
+</body>
+</html>
