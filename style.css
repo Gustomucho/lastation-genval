@@ -18,7 +18,35 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   NAVIGATION STICKY
+========================= */
+header nav {
+  background-color: var(--blanc);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: 500;
+}
+
+header nav a {
+  color: var(--brun-profond);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--rouge-brique);
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
   height: 100vh;
   background: url("./images/photo1.jpg") center/cover no-repeat;
@@ -87,7 +115,9 @@ body {
   color: var(--blanc);
 }
 
-/* ABOUT */
+/* =========================
+   SECTIONS GÉNÉRALES
+========================= */
 section {
   padding: 5rem 2rem;
   text-align: center;
@@ -106,7 +136,9 @@ section {
   font-size: 1.1rem;
 }
 
-/* MENU */
+/* =========================
+   MENU SECTION
+========================= */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -126,26 +158,9 @@ section {
   transform: translateY(-6px);
 }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.4s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 .contact p {
   margin: 0.5rem 0;
 }
@@ -155,17 +170,68 @@ section {
   font-weight: 500;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER + GOOGLE MAP
+========================= */
 footer {
   background-color: var(--brun-cafe);
   color: var(--beige);
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
+  padding: 3rem 1rem;
+  font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
 
-/* ANIMATION */
+footer h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--beige);
+  margin-bottom: 0.8rem;
+}
+
+footer iframe {
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+footer .socials {
+  margin-top: 1.5rem;
+}
+
+footer .socials a {
+  color: var(--beige);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+  color: var(--vert-olive);
+}
+
+footer a.footer-link {
+  color: var(--vert-olive);
+  text-decoration: none;
+}
+
+footer a.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  header nav { flex-wrap: wrap; gap: 1rem; }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
