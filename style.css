@@ -228,7 +228,7 @@ h2 {
 }
 
 .mentions a {
-  color: var(--rouge-brique);
+  color: var(--brun-cafe);
   font-weight: 500;
   text-decoration: none;
   position: relative;
@@ -275,7 +275,7 @@ footer a::after {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--blanc);
+  background-color: var(--brun-cafe);
   transition: width 0.3s ease;
 }
 
