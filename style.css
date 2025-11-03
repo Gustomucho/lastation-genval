@@ -152,28 +152,30 @@ body {
 
 /* SECTIONS */
 section {
-  padding: 3rem 2rem; /* réduit l’espace global */
+  padding: 3rem 2rem;
   text-align: center;
 }
 
 .about {
-  padding-bottom: 2rem; /* rapproche “Notre carte” */
+  padding-bottom: 2rem;
 }
 
 .menu {
   padding-top: 2rem;
-  padding-bottom: 2rem; /* rapproche “Contact & Accès” */
+  padding-bottom: 1.8rem;
 }
 
+/* Contact & Accès : espacement réduit */
 .contact {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   color: var(--brun-cafe);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .about p {
@@ -253,7 +255,11 @@ footer a:hover::after {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
-  section { padding: 3rem 1.5rem; }
+  section { padding: 2.5rem 1.5rem; }
   .navbar { gap: 1rem; }
   footer { font-size: 0.85rem; }
+  .contact {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
