@@ -152,8 +152,21 @@ body {
 
 /* SECTIONS */
 section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem; /* réduit l’espace global */
   text-align: center;
+}
+
+.about {
+  padding-bottom: 2rem; /* rapproche “Notre carte” */
+}
+
+.menu {
+  padding-top: 2rem;
+  padding-bottom: 2rem; /* rapproche “Contact & Accès” */
+}
+
+.contact {
+  padding-top: 2rem;
 }
 
 h2 {
