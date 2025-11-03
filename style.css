@@ -91,15 +91,15 @@ body {
 }
 
 .logo {
-  width: 45vw; /* 30% de la largeur de la fenêtre */
-  max-width: 300px; /* limite pour éviter qu’il soit trop grand sur grand écran */
+  width: 90vw; /* 30% de la largeur de la fenêtre */
+  max-width: 340px; /* limite pour éviter qu’il soit trop grand sur grand écran */
   margin-bottom: 1rem;
 }
 
 /* Version mobile */
 @media (max-width: 768px) {
   .logo {
-    width: 140px;
+    width: 180px;
   }
 }
 
@@ -213,7 +213,7 @@ h2 {
 
 /* --- SECTION MENTIONS --- */
 .mentions {
-  background-color: var(--beige);
+  background-color: var(--blanc);
   color: var(--brun-profond);
   padding: 4rem 2rem;
   text-align: center;
