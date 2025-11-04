@@ -267,6 +267,38 @@ h2 {
   width: 100%;
 }
 
+/* --- SECTION MENU PDF --- */
+.menu-pdf {
+  background-color: var(--blanc);
+  color: var(--brun-profond);
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 1s ease;
+}
+
+.menu-pdf h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: var(--brun-cafe);
+  margin-bottom: 2rem;
+}
+
+.menu-frame {
+  width: 90%;
+  height: 90vh;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu-frame {
+    width: 100%;
+    height: 75vh;
+  }
+}
+
 /* --- FOOTER --- */
 .site-footer {
   background-color: var(--blanc);
