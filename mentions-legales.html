@@ -3,9 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
   <title>Mentions légales – La Station Genval</title>
+  <meta name="description" content="Mentions légales de La Station Genval – informations sur l’éditeur, la responsabilité de publication et la propriété intellectuelle." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mentions légales – La Station Genval" />
+  <meta property="og:description" content="Consultez les mentions légales de La Station Genval : éditeur, hébergement, contact et droits de propriété intellectuelle." />
+  <meta property="og:image" content="https://github.com/Gustomucho/lastation-genval/blob/main/images/photo3.jpg?raw=true" />
+  <meta property="og:url" content="https://github.com/Gustomucho/lastation-genval/mentions-legales.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mentions légales – La Station Genval" />
+  <meta name="twitter:description" content="Consultez les mentions légales de La Station Genval : éditeur, hébergement, contact et droits de propriété intellectuelle." />
+  <meta name="twitter:image" content="https://github.com/Gustomucho/lastation-genval/blob/main/images/photo3.jpg?raw=true" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mentions légales – La Station Genval",
+    "description": "Mentions légales officielles de La Station Genval, café convivial à Genval.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Le Collectif Inattendu SRL",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue de la Station 38",
+        "addressLocality": "Genval",
+        "postalCode": "1332",
+        "addressCountry": "BE"
+      },
+      "telephone": "+32470211481",
+      "email": "lastation.genval@gmail.com"
+    },
+    "url": "https://github.com/Gustomucho/lastation-genval/mentions-legales.html"
+  }
+  </script>
 </head>
 
 <body>
@@ -13,13 +58,13 @@
   <header class="main-header">
     <nav class="navbar">
       <a href="index.html#accueil" class="nav-link">Accueil</a>
-      <a href="index.html#menu" class="nav-link">Menu</a>
+      <a href="menu.html" class="nav-link">Menu</a>
       <a href="index.html#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
   <!-- SECTION MENTIONS -->
-  <section class="mentions">
+  <main class="mentions">
     <h1>Mentions légales</h1>
 
     <p><strong>Éditeur du site :</strong><br>
@@ -46,14 +91,14 @@
 
     <!-- Bouton retour -->
     <a href="index.html" class="btn" style="margin-top: 2rem;">← Retour au site</a>
-  </section>
+  </main>
 
-  <!-- FOOTER (identique à la page d’accueil) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="socials">
-      <a href="https://www.instagram.com/lastation.genval" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61577733796335" target="_blank">Facebook</a>
-      <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank">Google Maps</a>
+      <a href="https://www.instagram.com/lastation.genval" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61577733796335" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank" rel="noopener noreferrer">Google Maps</a>
     </div>
     <p class="footer-text">
       © 2025 La Station Genval – Tous droits réservés<br>

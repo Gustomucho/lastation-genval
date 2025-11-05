@@ -125,6 +125,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* --- BOUTONS GLOBAUX --- */
 .btn, .btn-outline, .btn-map {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -142,6 +143,7 @@ body {
 
 .btn:hover {
   background-color: var(--brun-cafe);
+  color: var(--blanc);
 }
 
 .btn-outline {
@@ -168,7 +170,7 @@ body {
 section {
   padding: 3rem 2rem;
   text-align: center;
-  color: var(--brun-profond); /* correction ajoutée */
+  color: var(--brun-profond);
   background-color: var(--blanc);
 }
 
@@ -267,6 +269,25 @@ h2 {
   width: 100%;
 }
 
+/* --- BOUTON RETOUR AU SITE (STYLE IDENTIQUE AUX AUTRES BOUTONS) --- */
+.mentions .btn {
+  background-color: var(--rouge-brique);
+  color: var(--blanc);
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.mentions .btn:hover {
+  background-color: var(--brun-cafe);
+  color: var(--blanc);
+}
+
 /* --- SECTION MENU PDF --- */
 .menu-pdf {
   background-color: var(--blanc);
@@ -291,14 +312,6 @@ h2 {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-  .menu-frame {
-    width: 100%;
-    height: 75vh;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
   .menu-frame {
     width: 100%;

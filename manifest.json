@@ -1,0 +1,38 @@
+{
+    "name": "La Station Genval",
+    "short_name": "La Station",
+    "description": "Café convivial à Genval — Petit déjeuner, lunch, café et produits locaux dans un lieu authentique et chaleureux.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#FFFFFF",
+    "theme_color": "#C3534B",
+    "lang": "fr",
+    "icons": [
+      {
+        "src": "/images/favicon.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "Voir le menu",
+        "short_name": "Menu",
+        "url": "/menu.html",
+        "icons": [{ "src": "/images/favicon.png", "sizes": "64x64", "type": "image/png" }]
+      },
+      {
+        "name": "Nous contacter",
+        "short_name": "Contact",
+        "url": "/index.html#contact",
+        "icons": [{ "src": "/images/favicon.png", "sizes": "64x64", "type": "image/png" }]
+      }
+    ]
+  }

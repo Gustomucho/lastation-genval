@@ -1,0 +1,12 @@
+# robots.txt pour La Station Genval
+# Autorise tous les moteurs de recherche à explorer le site
+
+User-agent: *
+Allow: /
+
+# Emplacement du sitemap
+Sitemap: https://lastation-genval.be/sitemap.xml
+
+# Informations supplémentaires
+# Projet source hébergé sur GitHub : https://github.com/Gustomucho/lastation-genval
+# Site officiel : https://lastation-genval.be/
