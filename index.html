@@ -16,12 +16,6 @@
   <meta property="og:url" content="https://github.com/Gustomucho/lastation-genval" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="La Station Genval – Café & Petite Restauration" />
-  <meta name="twitter:description" content="Café convivial à Genval : brunchs, télétravail, produits locaux et ambiance chaleureuse." />
-  <meta name="twitter:image" content="https://github.com/Gustomucho/lastation-genval/blob/main/images/photo1.jpg?raw=true" />
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./images/favicon.png" />
   <link rel="manifest" href="manifest.json">
@@ -30,7 +24,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Données structurées JSON-LD -->
+  <!-- SCHEMA LOCAL BUSINESS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,14 +46,66 @@
       "https://www.facebook.com/profile.php?id=61577733796335",
       "https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8"
     ],
-    "openingHours": "Mo-Fr 07:00-14:00, We 07:00-17:00",
+    "openingHours": "Mo-Fr 07:00-14:00",
     "servesCuisine": "Petit déjeuner, Lunch, Café, Gourmandises"
   }
   </script>
+
+  <!-- SCHEMA FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont vos horaires d'ouverture ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous sommes ouverts du mardi au vendredi de 7h00 à 14h00."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Y a-t-il un parking gratuit à proximité ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, le parking de la gare est gratuit et situé à 1 minute, accès via la Rue du Cerf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il réserver une table ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, la réservation est fortement recommandée par téléphone au 0470 21 14 81."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on venir travailler avec un ordinateur ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, vous pouvez travailler sur place le matin dans une ambiance calme avec wifi disponible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on prendre à emporter ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, la majorité de notre carte est disponible à emporter."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
-  <!-- HEADER / MENU STICKY -->
+
+  <!-- HEADER -->
   <header class="main-header">
     <nav class="navbar">
       <a href="#accueil" class="nav-link">Accueil</a>
@@ -75,8 +121,7 @@
       <img src="./images/logo.png" alt="Logo La Station Genval" class="logo">
       <p>Petit déjeuner • Lunch • Café • Gourmandises</p>
       <p class="opening-hours">
-        Lundi – Vendredi : 7h00 – 14h<br>
-        Mercredi : 7h00 – 17h
+        Mardi – Vendredi : 7h00 – 14h
       </p>
       <div class="hero-buttons">
         <a href="#about" class="btn">Découvrir La Station</a>
@@ -90,8 +135,8 @@
     <h2>Un café de gare pas comme les autres</h2>
     <p>
       Située à la gare de Genval, <strong>La Station</strong> est un lieu de vie chaleureux et authentique.  
-      Ici, tout est fait maison : des cafés de spécialité torréfiés localement aux plats simples et savoureux préparés avec soin.
-      Que vous soyez de passage, en télétravail ou en famille, La Station est votre escale gourmande à toute heure de la journée.
+      Ici, tout est fait maison : des cafés de spécialité torréfiés localement aux plats simples et savoureux.
+      Que vous soyez de passage, en télétravail ou en famille, La Station est votre escale gourmande.
     </p>
   </section>
 
@@ -100,45 +145,82 @@
     <h2>Contact et Accès</h2>
     <p>Rue de la Station 38, 1332 Genval</p>
     <p><a href="mailto:lastation.genval@gmail.com">lastation.genval@gmail.com</a></p>
-    <p><a href="https://instagram.com/lastation.genval" target="_blank" rel="noopener noreferrer">@lastation.genval</a></p>
+    <p><a href="https://instagram.com/lastation.genval" target="_blank">@lastation.genval</a></p>
     <p><a href="tel:+32470211481">📞 0470 21 14 81</a></p>
 
     <h3>Parking</h3>
     <p>
-      Le parking gratuit de la gare se trouve à seulement 50 mètres de La Station.<br>
-      <a href="https://maps.app.goo.gl/Tr8PrHFWvBaJgD6XA"
-         target="_blank"
-         rel="noopener noreferrer">
-        Voir le parking sur Google Maps →
+      Parking gratuit de la gare à 50m.<br>
+      <a href="https://maps.app.goo.gl/Tr8PrHFWvBaJgD6XA" target="_blank">
+        Voir sur Google Maps →
       </a>
     </p>
   </section>
 
-  <!-- GOOGLE MAPS -->
+  <!-- MAP -->
   <section class="map">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d307.9679218862247!2d4.514703734059108!3d50.725437589510236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3d7c1fcc97df5%3A0xc272520a09a8553!2sLa%20Station!5e0!3m2!1sfr!2sbe!4v1762202086453!5m2!1sfr!2sbe"
+      src="https://www.google.com/maps/embed?..."
       width="90%"
       height="350"
       style="border:0; border-radius:10px;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      loading="lazy">
     </iframe>
-    <a href="https://maps.app.goo.gl/CjU3Xew65sG9jGvaA" target="_blank" rel="noopener noreferrer" class="btn-map">Itinéraire →</a>
+    <a href="https://maps.app.goo.gl/CjU3Xew65sG9jGvaA" target="_blank" class="btn-map">Itinéraire →</a>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Quels sont vos horaires d'ouverture ?</h3>
+      <p>Mardi à vendredi de 7h00 à 14h00.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Y a-t-il un parking gratuit à proximité ?</h3>
+      <p>Oui, parking gratuit de la gare à 1 minute (Rue du Cerf).</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Faut-il réserver une table ?</h3>
+      <p>Oui, recommandé. Appelez le <a href="tel:+32470211481">0470 21 14 81</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on venir travailler avec un ordinateur ?</h3>
+      <p>Oui, wifi disponible et ambiance calme le matin.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on prendre à emporter ?</h3>
+      <p>Oui, la plupart de nos plats sont disponibles à emporter.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Acceptez-vous les chiens ?</h3>
+      <p>Oui, les chiens calmes sont les bienvenus.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Y a-t-il une terrasse ?</h3>
+      <p>Oui, grande terrasse ensoleillée aux beaux jours.</p>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="socials">
-      <a href="https://www.instagram.com/lastation.genval" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61577733796335" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank" rel="noopener noreferrer">Google Maps</a>
+      <a href="https://www.instagram.com/lastation.genval" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61577733796335" target="_blank">Facebook</a>
+      <a href="https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8" target="_blank">Google Maps</a>
     </div>
     <p class="footer-text">
-      <a href="mentions-legales.html" class="footer-link">Mentions légales</a><br>
-      © 2025 La Station Genval – Petit déjeuner • Lunch • Café • Gourmandises
+      <a href="mentions-legales.html">Mentions légales</a><br>
+      © 2025 La Station Genval
     </p>
   </footer>
+
 </body>
 </html>
