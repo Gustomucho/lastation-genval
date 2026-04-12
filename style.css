@@ -203,10 +203,10 @@ h2 {
 }
 
 .separator {
-  width: 20%;
-  margin: 25px auto;
+  width: 80%;
+  margin: 60px auto;
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgba(0,0,0,0.15);
 }
 
 /* CONTACT */
