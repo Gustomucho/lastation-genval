@@ -113,6 +113,23 @@
 
 <body>
 
+  <!-- POPUP FERMETURE ESTIVALE -->
+  <div id="summer-popup" class="summer-popup" role="dialog" aria-modal="true" aria-labelledby="summer-popup-title" hidden>
+    <div class="summer-popup-backdrop" data-close-popup></div>
+    <div class="summer-popup-dialog">
+      <button type="button" class="summer-popup-close" aria-label="Fermer" data-close-popup>&times;</button>
+      <div class="summer-popup-sun" aria-hidden="true">☀️</div>
+      <h2 id="summer-popup-title" class="summer-popup-title">Petite pause estivale !</h2>
+      <p class="summer-popup-text">
+        Nous sommes fermés jusqu’au <strong>23 août inclus</strong>.
+      </p>
+      <p class="summer-popup-text summer-popup-text-accent">
+        On a hâte de vous retrouver dès le <strong>24 août</strong> 💛
+      </p>
+      <button type="button" class="btn summer-popup-btn" data-close-popup>Compris, à bientôt !</button>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="main-header">
     <nav class="navbar">
@@ -244,6 +261,48 @@ referrerpolicy="no-referrer-when-downgrade">
       © 2025 La Station Genval
     </p>
   </footer>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = "summer-closure-dismissed-2026";
+      var popup = document.getElementById("summer-popup");
+      if (!popup) return;
+
+      // Ne plus afficher après le 24 août 2026
+      var reopenDate = new Date(2026, 7, 24); // mois 0-indexé
+      if (new Date() >= reopenDate) return;
+
+      if (localStorage.getItem(STORAGE_KEY)) return;
+
+      function openPopup() {
+        popup.hidden = false;
+        document.body.classList.add("summer-popup-open");
+        var closeBtn = popup.querySelector(".summer-popup-close");
+        if (closeBtn) closeBtn.focus();
+      }
+
+      function closePopup() {
+        popup.classList.add("is-closing");
+        setTimeout(function () {
+          popup.hidden = true;
+          popup.classList.remove("is-closing");
+          document.body.classList.remove("summer-popup-open");
+          localStorage.setItem(STORAGE_KEY, "1");
+        }, 220);
+      }
+
+      popup.querySelectorAll("[data-close-popup]").forEach(function (el) {
+        el.addEventListener("click", closePopup);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !popup.hidden) closePopup();
+      });
+
+      // Petite pause pour laisser la page se charger
+      setTimeout(openPopup, 400);
+    })();
+  </script>
 
 </body>
 </html>
