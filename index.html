@@ -113,19 +113,40 @@
 
 <body>
 
-  <!-- POPUP FERMETURE ESTIVALE -->
+  <!--
+    ============================================
+    POPUP DE FERMETURE (vacances / jours fériés)
+    ============================================
+    Ce bloc affiche un message au centre de la page d'accueil.
+    Pour le réactiver aux prochaines vacances :
+      1. Modifier le texte ci-dessous (titre, dates, bouton)
+      2. Plus bas dans la page, modifier aussi le <script>
+         (clé STORAGE_KEY + date de réouverture)
+      3. Voir le README.md pour le guide pas à pas
+  -->
   <div id="summer-popup" class="summer-popup" role="dialog" aria-modal="true" aria-labelledby="summer-popup-title" hidden>
+    <!-- Fond sombre cliquable : ferme le popup -->
     <div class="summer-popup-backdrop" data-close-popup></div>
+
     <div class="summer-popup-dialog">
+      <!-- Bouton × en haut à droite -->
       <button type="button" class="summer-popup-close" aria-label="Fermer" data-close-popup>&times;</button>
+
+      <!-- Icône décorative (tu peux changer l'emoji) -->
       <div class="summer-popup-sun" aria-hidden="true">☀️</div>
+
+      <!-- Titre du popup : à adapter selon les vacances -->
       <h2 id="summer-popup-title" class="summer-popup-title">Petite pause estivale !</h2>
+
+      <!-- Message principal : change les dates ici -->
       <p class="summer-popup-text">
         Nous sommes fermés jusqu’au <strong>23 août inclus</strong>.
       </p>
       <p class="summer-popup-text summer-popup-text-accent">
         On a hâte de vous retrouver dès le <strong>24 août</strong> 💛
       </p>
+
+      <!-- Bouton de confirmation : ferme aussi le popup -->
       <button type="button" class="btn summer-popup-btn" data-close-popup>Compris, à bientôt !</button>
     </div>
   </div>
@@ -262,18 +283,37 @@ referrerpolicy="no-referrer-when-downgrade">
     </p>
   </footer>
 
+  <!--
+    Script du popup de fermeture.
+    À modifier en même temps que le texte HTML du popup (plus haut).
+  -->
   <script>
     (function () {
+      /*
+        À CHANGER à chaque nouvelle période de fermeture :
+        - Utilise un nouveau nom (ex. "fermeture-noel-2026", "fermeture-ete-2027")
+        - Sinon, les visiteurs qui ont déjà fermé l'ancien popup ne verront pas le nouveau
+      */
       var STORAGE_KEY = "summer-closure-dismissed-2026";
+
       var popup = document.getElementById("summer-popup");
       if (!popup) return;
 
-      // Ne plus afficher après le 24 août 2026
-      var reopenDate = new Date(2026, 7, 24); // mois 0-indexé
+      /*
+        Date de RÉOUVERTURE (le popup s'arrête automatiquement ce jour-là).
+        Format : new Date(ANNÉE, MOIS, JOUR)
+        ⚠️ Important : en JavaScript, les mois commencent à 0 :
+          janvier = 0, février = 1, ..., juillet = 6, août = 7, ..., décembre = 11
+        Exemple : 24 août 2026  →  new Date(2026, 7, 24)
+        Exemple : 2 janvier 2027 →  new Date(2027, 0, 2)
+      */
+      var reopenDate = new Date(2026, 7, 24);
       if (new Date() >= reopenDate) return;
 
+      // Si le visiteur a déjà fermé ce popup, on ne le montre plus
       if (localStorage.getItem(STORAGE_KEY)) return;
 
+      // Affiche le popup
       function openPopup() {
         popup.hidden = false;
         document.body.classList.add("summer-popup-open");
@@ -281,6 +321,7 @@ referrerpolicy="no-referrer-when-downgrade">
         if (closeBtn) closeBtn.focus();
       }
 
+      // Ferme le popup et mémorise le choix du visiteur
       function closePopup() {
         popup.classList.add("is-closing");
         setTimeout(function () {
@@ -291,15 +332,17 @@ referrerpolicy="no-referrer-when-downgrade">
         }, 220);
       }
 
+      // Clic sur ×, fond sombre, ou bouton "Compris"
       popup.querySelectorAll("[data-close-popup]").forEach(function (el) {
         el.addEventListener("click", closePopup);
       });
 
+      // Touche Escape du clavier
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !popup.hidden) closePopup();
       });
 
-      // Petite pause pour laisser la page se charger
+      // Petite pause pour laisser la page se charger avant d'afficher le popup
       setTimeout(openPopup, 400);
     })();
   </script>

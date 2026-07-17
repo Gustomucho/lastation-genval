@@ -414,7 +414,13 @@ h2 {
   }
 }
 
-/* --- POPUP FERMETURE ESTIVALE --- */
+/*
+  --- POPUP DE FERMETURE (vacances) ---
+  Styles de la fenêtre affichée sur la page d'accueil.
+  En général, tu n'as PAS besoin de modifier ce fichier pour
+  réactiver le popup : change seulement le texte et les dates
+  dans index.html (voir aussi README.md).
+*/
 body.summer-popup-open {
   overflow: hidden;
 }
