@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="canonical" href="https://lastation-genval.be/" />
   <meta name="google-site-verification" content="Gv_RcJUkGqfjBOOxvQvGGndXgZ2HzYf5Z_ryDSgcIEk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +13,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="La Station Genval – Café & Petite Restauration" />
   <meta property="og:description" content="Café convivial à Genval : brunchs, télétravail, produits locaux et ambiance chaleureuse." />
-  <meta property="og:image" content="https://github.com/Gustomucho/lastation-genval/blob/main/images/photo1.jpg?raw=true" />
-  <meta property="og:url" content="https://github.com/Gustomucho/lastation-genval" />
+  <meta property="og:image" content="https://lastation-genval.be/images/photo1.jpg" />
+  <meta property="og:url" content="https://lastation-genval.be/" />
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
@@ -24,31 +25,75 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- SCHEMA LOCAL BUSINESS -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "La Station Genval",
-    "image": "https://github.com/Gustomucho/lastation-genval/blob/main/images/photo1.jpg?raw=true",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rue de la Station 38",
-      "addressLocality": "Genval",
-      "postalCode": "1332",
-      "addressCountry": "BE"
+  <!-- SCHEMA LOCAL BUSINESS : source des outils IA -->
+  <script type="application/ld+json" id="cafe-data">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "La Station Genval",
+  "image": "https://lastation-genval.be/images/photo1.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue de la Station 38",
+    "addressLocality": "Genval",
+    "postalCode": "1332",
+    "addressCountry": "BE"
+  },
+  "telephone": "+32470211481",
+  "email": "lastation.genval@gmail.com",
+  "url": "https://lastation-genval.be/",
+  "sameAs": [
+    "https://instagram.com/lastation.genval",
+    "https://www.facebook.com/profile.php?id=61577733796335",
+    "https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8"
+  ],
+  "openingHours": "Mo-Fr 07:00-14:00",
+  "servesCuisine": "Petit déjeuner, Lunch, Café, Gourmandises",
+  "@id": "https://lastation-genval.be/#cafe",
+  "description": "Café et petite restauration dans la gare de Genval : petit déjeuner, lunch, café et gourmandises.",
+  "hasMenu": "https://lastation-genval.be/menu.html",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "07:00",
+      "closes": "14:00"
+    }
+  ],
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Wifi",
+      "value": true
     },
-    "telephone": "+32470211481",
-    "email": "lastation.genval@gmail.com",
-    "url": "https://github.com/Gustomucho/lastation-genval",
-    "sameAs": [
-      "https://instagram.com/lastation.genval",
-      "https://www.facebook.com/profile.php?id=61577733796335",
-      "https://maps.app.goo.gl/yA7gUDZw3Ps3B1wK8"
-    ],
-    "openingHours": "Mo-Fr 07:00-14:00",
-    "servesCuisine": "Petit déjeuner, Lunch, Café, Gourmandises"
-  }
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Télétravail le matin",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Vente à emporter",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Terrasse aux beaux jours",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Chiens calmes acceptés",
+      "value": true
+    }
+  ]
+}
   </script>
 
   <!-- SCHEMA FAQ -->
@@ -109,47 +154,11 @@
   }
   </script>
 
+  <link rel="alternate" type="application/json" href="menu.json" title="Carte de La Station — données" />
+  <script src="agent-tools.js" defer></script>
 </head>
 
 <body>
-
-  <!--
-    ============================================
-    POPUP DE FERMETURE (vacances / jours fériés)
-    ============================================
-    Ce bloc affiche un message au centre de la page d'accueil.
-    Pour le réactiver aux prochaines vacances :
-      1. Modifier le texte ci-dessous (titre, dates, bouton)
-      2. Plus bas dans la page, modifier aussi le <script>
-         (clé STORAGE_KEY + date de réouverture)
-      3. Voir le README.md pour le guide pas à pas
-  -->
-  <div id="summer-popup" class="summer-popup" role="dialog" aria-modal="true" aria-labelledby="summer-popup-title" hidden>
-    <!-- Fond sombre cliquable : ferme le popup -->
-    <div class="summer-popup-backdrop" data-close-popup></div>
-
-    <div class="summer-popup-dialog">
-      <!-- Bouton × en haut à droite -->
-      <button type="button" class="summer-popup-close" aria-label="Fermer" data-close-popup>&times;</button>
-
-      <!-- Icône décorative (tu peux changer l'emoji) -->
-      <div class="summer-popup-sun" aria-hidden="true">☀️</div>
-
-      <!-- Titre du popup : à adapter selon les vacances -->
-      <h2 id="summer-popup-title" class="summer-popup-title">Petite pause estivale !</h2>
-
-      <!-- Message principal : change les dates ici -->
-      <p class="summer-popup-text">
-        Nous sommes fermés jusqu’au <strong>23 août inclus</strong>.
-      </p>
-      <p class="summer-popup-text summer-popup-text-accent">
-        On a hâte de vous retrouver dès le <strong>24 août</strong> 💛
-      </p>
-
-      <!-- Bouton de confirmation : ferme aussi le popup -->
-      <button type="button" class="btn summer-popup-btn" data-close-popup>Compris, à bientôt !</button>
-    </div>
-  </div>
 
   <!-- HEADER -->
   <header class="main-header">
@@ -283,69 +292,6 @@ referrerpolicy="no-referrer-when-downgrade">
     </p>
   </footer>
 
-  <!--
-    Script du popup de fermeture.
-    À modifier en même temps que le texte HTML du popup (plus haut).
-  -->
-  <script>
-    (function () {
-      /*
-        À CHANGER à chaque nouvelle période de fermeture :
-        - Utilise un nouveau nom (ex. "fermeture-noel-2026", "fermeture-ete-2027")
-        - Sinon, les visiteurs qui ont déjà fermé l'ancien popup ne verront pas le nouveau
-      */
-      var STORAGE_KEY = "summer-closure-dismissed-2026";
-
-      var popup = document.getElementById("summer-popup");
-      if (!popup) return;
-
-      /*
-        Date de RÉOUVERTURE (le popup s'arrête automatiquement ce jour-là).
-        Format : new Date(ANNÉE, MOIS, JOUR)
-        ⚠️ Important : en JavaScript, les mois commencent à 0 :
-          janvier = 0, février = 1, ..., juillet = 6, août = 7, ..., décembre = 11
-        Exemple : 24 août 2026  →  new Date(2026, 7, 24)
-        Exemple : 2 janvier 2027 →  new Date(2027, 0, 2)
-      */
-      var reopenDate = new Date(2026, 7, 24);
-      if (new Date() >= reopenDate) return;
-
-      // Si le visiteur a déjà fermé ce popup, on ne le montre plus
-      if (localStorage.getItem(STORAGE_KEY)) return;
-
-      // Affiche le popup
-      function openPopup() {
-        popup.hidden = false;
-        document.body.classList.add("summer-popup-open");
-        var closeBtn = popup.querySelector(".summer-popup-close");
-        if (closeBtn) closeBtn.focus();
-      }
-
-      // Ferme le popup et mémorise le choix du visiteur
-      function closePopup() {
-        popup.classList.add("is-closing");
-        setTimeout(function () {
-          popup.hidden = true;
-          popup.classList.remove("is-closing");
-          document.body.classList.remove("summer-popup-open");
-          localStorage.setItem(STORAGE_KEY, "1");
-        }, 220);
-      }
-
-      // Clic sur ×, fond sombre, ou bouton "Compris"
-      popup.querySelectorAll("[data-close-popup]").forEach(function (el) {
-        el.addEventListener("click", closePopup);
-      });
-
-      // Touche Escape du clavier
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && !popup.hidden) closePopup();
-      });
-
-      // Petite pause pour laisser la page se charger avant d'afficher le popup
-      setTimeout(openPopup, 400);
-    })();
-  </script>
 
 </body>
 </html>

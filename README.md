@@ -1,100 +1,107 @@
-# 🌿 La Station Genval
+# La Station Genval
 
-Site web simple pour **La Station**, café & petite restauration à Genval.
+Site public : https://lastation-genval.be/
 
-## Structure
-- `index.html` — page principale (et popup de fermeture)
-- `style.css` — style clair et minimaliste
-- `menu.html` — page du menu
-- `mentions-legales.html` — mentions légales
-- `images/` — logo, photos, favicon
+Le site reste en HTML/CSS, hébergé sur GitHub Pages. Aucun serveur, abonnement ou
+service d’IA n’est nécessaire pour les nouveaux outils. Les visiteurs conservent
+la même présentation ; les agents compatibles peuvent consulter les informations
+et rechercher dans la carte.
 
-## Déploiement sur GitHub Pages
-1. Ouvrir les **Settings** du dépôt GitHub.
-2. Aller dans **Pages**.
-3. Sélectionner la branche `main` et le dossier `/ (root)`.
-4. Le site sera disponible à :  
-   👉 https://gustomucho.github.io/lastation-genval
+## Outils pour les agents IA
 
----
+`agent-tools.js` est chargé sur les trois pages. Il utilise en priorité
+`document.modelContext.registerTool()`, avec l’ancienne API
+`navigator.modelContext` en dernier recours. Sans API compatible, il s’arrête sans
+modifier la page. Les erreurs d’enregistrement sont isolées par outil.
 
-## Réactiver le popup pour de prochaines vacances
+| Outil | Fonction |
+| --- | --- |
+| `get_cafe_info` | Adresse, téléphone, email, services et liens officiels. |
+| `get_opening_hours` | Horaires habituels et exceptions publiées, heure de Bruxelles. |
+| `search_menu` | Recherche par mots, catégorie et prix maximum, en euros. |
+| `get_reservation_options` | Procédure de réservation par téléphone, sans créer de réservation. |
 
-Le site peut afficher un **popup** sur la page d’accueil pour annoncer une fermeture
-(été, Noël, etc.). Voici comment le remettre en route, même sans être développeur.
+La fiche structurée `#cafe-data` dans `index.html` est la source commune des
+coordonnées et horaires pour les pages et les outils. Pour une fermeture
+exceptionnelle, ajouter une `specialOpeningHoursSpecification` avec des dates
+explicites et publier aussi une annonce visible sur la page. L’ancien message
+d’été 2026 a été retiré. Ne pas ajouter de nouvelle fermeture sans dates vérifiées.
 
-### Fichier à modifier
-Ouvre uniquement **`index.html`**.
+Les outils sont en lecture seule. Ils ne garantissent ni le stock, ni l’ouverture
+en temps réel, ni l’absence d’allergènes. Ils n’envoient pas d’email et ne
+réservent pas de table. La prise en charge WebMCP dépend du navigateur et de
+l’agent ; ajouter ce code ne l’active pas dans un navigateur non compatible.
 
-Tu dois changer **2 endroits** dans ce fichier :
-1. le **texte** du popup (en haut de la page, juste après `<body>`)
-2. le **script** du popup (tout en bas de la page, avant `</body>`)
+## État initial de la carte : attention au PDF ancien
 
-### Étape 1 — Modifier le message
+Lors de l’intégration, `Menu.pdf` était une ancienne carte (printemps), différente
+des deux images affichées par `menu.html` (notamment Americano et Toast Fig Kiss).
+Il n’a pas été remplacé. `menu.json` contient les 55 articles et suppléments
+vérifiés dans les **images affichées**, avec leur provenance. Tant que ce décalage
+existe, l’outil renvoie la page et les images comme sources, jamais l’ancien PDF
+comme référence de la carte actuelle.
 
-Cherche le bloc qui commence par `POPUP DE FERMETURE`.
+Les données JSON sont publiques mais ne s’affichent pas dans la page. Aucun texte
+invisible n’a été ajouté. `search_menu` vérifie les empreintes du PDF et des deux
+images avant de répondre. Si un de ces fichiers change seul, il signale une
+indisponibilité temporaire au lieu de répondre avec des prix potentiellement périmés.
 
-Change par exemple :
-- le titre (`Petite pause estivale !`)
-- les dates dans les phrases
-- le texte du bouton si tu veux
-- l’emoji ☀️ si tu veux (ex. 🎄 pour Noël)
+## Mettre à jour la carte
 
-### Étape 2 — Modifier le script (obligatoire)
+1. Fournir le **nouveau PDF correspondant à la carte à publier** dans une branche
+   séparée (pull request). Ne pas publier un PDF seul directement sur `main`.
+2. L’action GitHub **Extraire le nouveau PDF du menu** prépare automatiquement un
+   paquet `menu-candidat-a-verifier`, disponible dans les résultats de l’action.
+3. Télécharger ce paquet et comparer les noms, prix, suppléments, descriptions et
+   heures de service avec les deux images générées. L’extraction automatique
+   nécessite cette vérification ; une nouvelle mise en page peut demander une adaptation.
+4. Ajouter ensemble les quatre fichiers du paquet à la même proposition :
+   `Menu.pdf`, `menu-page-1.jpg`, `menu-page-2.jpg` et `menu.json`.
+5. Attendre la réussite de **Vérifier le site et préparer le menu**, puis intégrer
+   la proposition. GitHub Pages conserve son mode de publication actuel.
 
-Tout en bas de `index.html`, cherche le `<script>` du popup.
+La génération ne remplace jamais automatiquement la carte publique : elle prépare
+un paquet à vérifier. Les actions signalent les incohérences ; elles ne remplacent
+pas une règle GitHub de protection de branche. Le contrôle dans l’outil empêche
+également de retourner des données périmées si une mise à jour directe a lieu.
 
-#### a) Changer la clé de mémorisation
-```js
-var STORAGE_KEY = "summer-closure-dismissed-2026";
+Le script accepte le PDF texte à deux colonnes utilisé ici ; il refuse un PDF
+scanné ou une structure qu’il ne reconnaît pas. Il ne déduit aucun allergène ou
+régime alimentaire. Pour préparer le paquet localement :
+
+```sh
+python -m pip install -r scripts/requirements-menu.txt
+# Installer aussi Poppler (pdftoppm) sur l’ordinateur.
+python scripts/menu_data.py --pdf Menu.pdf --output-dir /tmp/menu-candidat
 ```
 
-Donne-lui un **nouveau nom** à chaque période, par exemple :
-- `"fermeture-noel-2026"`
-- `"fermeture-ete-2027"`
+Le dossier de sortie doit être extérieur au site pour éviter d’écraser la carte
+avant vérification. L’ancienne pièce jointe fournie pendant la conversation n’est
+pas utilisée comme source de la nouvelle carte.
 
-Sans ça, les visiteurs qui ont déjà fermé l’ancien popup ne verront pas le nouveau.
+## Vérifications
 
-#### b) Changer la date de réouverture
-```js
-var reopenDate = new Date(2026, 7, 24);
+```sh
+python scripts/menu_data.py --check
+node --test tests/agent-tools.test.cjs
 ```
 
-C’est le jour où le popup **s’arrête tout seul**.
+Les tests Node vérifient les recherches, les entrées invalides, le repli sans API,
+les données périmées et les fiches structurées. Leur registre est simulé : ils ne
+prouvent pas la découverte dans un navigateur réel.
 
-Format : `new Date(ANNÉE, MOIS, JOUR)`
+Avant publication de l’intégration, ouvrir une prévisualisation dans un navigateur
+compatible WebMCP, vérifier la liste des quatre outils et appeler chacun. Tester
+`search_menu` avec `{"query":"cappuccino"}`, `{"query":"fig kiss"}`, une recherche
+sans résultat et un prix négatif (qui doit être refusé). Refaire un appel après
+navigation vers `menu.html`. Vérifier aussi le site dans un navigateur sans API.
 
-⚠️ En JavaScript, les mois commencent à **0** :
+## Publication et retour arrière
 
-| Mois      | Numéro |
-|-----------|--------|
-| Janvier   | 0      |
-| Février   | 1      |
-| Mars      | 2      |
-| Avril     | 3      |
-| Mai       | 4      |
-| Juin      | 5      |
-| Juillet   | 6      |
-| Août      | 7      |
-| Septembre | 8      |
-| Octobre   | 9      |
-| Novembre  | 10     |
-| Décembre  | 11     |
+GitHub Pages conserve la branche `main`, dossier racine, et le domaine
+`lastation-genval.be`. Le fichier `CNAME`, le style, les photos, les images de la
+carte et le PDF n’ont pas été modifiés par l’intégration.
 
-Exemples :
-- Réouverture le **24 août 2026** → `new Date(2026, 7, 24)`
-- Réouverture le **2 janvier 2027** → `new Date(2027, 0, 2)`
-- Réouverture le **15 juillet 2027** → `new Date(2027, 6, 15)`
-
-### Étape 3 — Publier sur le site
-
-1. Enregistre `index.html`
-2. Fais un **commit** puis un **push** sur la branche `main`
-3. Attends 1–2 minutes que GitHub Pages mette le site à jour
-4. Ouvre la page d’accueil (éventuellement en navigation privée) pour vérifier
-
-### Astuce pour retester le popup chez toi
-Si tu as déjà fermé le popup une fois, le navigateur s’en souvient.
-Pour le revoir :
-- ouvre le site en **navigation privée**, ou
-- change temporairement la valeur de `STORAGE_KEY`, recharge la page, puis remets la bonne clé
+Les changements peuvent être intégrés en un commit. Pour revenir en arrière,
+utiliser **Revert** sur ce commit / la pull request, puis attendre la publication
+GitHub Pages. Aucun changement de paramètres d’hébergement n’est nécessaire.

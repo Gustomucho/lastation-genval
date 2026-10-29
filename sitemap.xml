@@ -8,7 +8,7 @@
   <!-- Page d'accueil -->
   <url>
     <loc>https://lastation-genval.be/</loc>
-    <lastmod>2025-11-05</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,7 +16,7 @@
   <!-- Page du menu -->
   <url>
     <loc>https://lastation-genval.be/menu.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -24,7 +24,7 @@
   <!-- Page des mentions légales -->
   <url>
     <loc>https://lastation-genval.be/mentions-legales.html</loc>
-    <lastmod>2025-11-05</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
