@@ -1,0 +1,30 @@
+name: Extraire le nouveau PDF du menu
+on:
+  pull_request:
+    paths: ['Menu.pdf']
+  push:
+    branches: [main]
+    paths: ['Menu.pdf']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare-menu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer les outils d’extraction
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          pip install -r scripts/requirements-menu.txt
+      - name: Préparer les données et images à vérifier
+        run: python scripts/menu_data.py --output-dir "$RUNNER_TEMP/menu-candidat"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: menu-candidat-a-verifier
+          path: ${{ runner.temp }}/menu-candidat
+          if-no-files-found: error
