@@ -31,7 +31,7 @@
       {
         "name": "Nous contacter",
         "short_name": "Contact",
-        "url": "/index.html#contact",
+        "url": "/#contact",
         "icons": [{ "src": "/images/favicon.png", "sizes": "64x64", "type": "image/png" }]
       }
     ]
