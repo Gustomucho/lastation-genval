@@ -33,6 +33,10 @@ def check(root):
     assert isinstance(menu["source"]["pdf_matches_visible_menu"], bool)
     assert menu["source"]["method"] in {"verified_visible_images", "extracted_pdf"}
     assert len(menu["items"]) >= 10, "Extraction incomplète : trop peu de produits."
+    assert {item["source_page"] for item in menu["items"]} == {1, 2}, "Extraction incomplète : une page du menu est absente."
+    assert {"Cafés", "Petit-déjeuner", "Lunch", "Gourmandises"} <= {item["category"] for item in menu["items"]}, "Extraction incomplète : une rubrique principale est absente."
+    image_hashes = [source["sha256"] for source in menu["source"]["files"] if source["path"].endswith(".jpg")]
+    assert len(set(image_hashes)) == 2, "Les deux images du menu sont identiques."
     ids = set()
     for item in menu["items"]:
         assert item["id"] not in ids
@@ -49,7 +53,7 @@ PRICE = re.compile(r"^(.*?)\s+(\+?\s*\d+(?:\s*[.,]\s*\d+)?|Offert|-)\s*$", re.I)
 HOURS = re.compile(r"de (\d{1,2})h(\d{2}) à (\d{1,2})h(\d{2})", re.I)
 CATEGORIES = {
     "CAFÉS": "Cafés", "MATCHAS": "Matchas", "EXTRAS": "Extras boissons",
-    "Extras :": "Extras lunch", "EXTRAS :": "Extras lunch",
+    "Extras :": "Extras lunch", "EXTRAS :": "Extras lunch", "UN PETIT EXTRA ?": "Extras lunch",
     "THÉS ET INFUSIONS": "Thés et infusions", "GOURMANDS": "Les doudous",
     "LES DOUDOUS": "Les doudous", "KIDS ONLY": "Kids only",
     "BOISSONS FRAÎCHES": "Boissons fraîches", "BIÈRES": "Bières",
@@ -74,12 +78,17 @@ def extract(pdf_path):
             x0, y0, x1, y1 = page.bbox
             for box in [(x0, y0, split, y1), (split, y0, x1, y1)]:
                 category, hours, current, pending = None, None, None, []
+                count_before = len(items)
                 for line in page.crop(box).extract_text_lines(y_tolerance=5):
                     text = line["text"].strip()
                     if text in ("À BOIRE", "À MANGER", "(au verre)"):
                         continue
-                    if text.startswith(("Nos plats", "Une question", "N’hésitez", "Ici, on aime", "Cette carte")):
-                        break
+                    if text.startswith(("Nos plats", "Une question", "N’hésitez", "Ici, on aime", "Cette carte", "Peur d’avoir le FOMO")):
+                        # An introduction can precede the first section (page 2,
+                        # right column). Only a note after products ends a column.
+                        if category is not None:
+                            break
+                        continue
                     key = text if text in CATEGORIES else text.upper()
                     if key in CATEGORIES:
                         if pending:
@@ -102,6 +111,8 @@ def extract(pdf_path):
                         pending = []
                         if not name:
                             raise ValueError("Prix sans produit : " + text)
+                        if name == "Mix & Match !":
+                            category = "Formules lunch"
                         compact = re.sub(r"\s", "", raw_price).replace(",", ".")
                         price = None if compact == "-" else 0 if compact.lower() == "offert" else float(compact.lstrip("+"))
                         current = {"id": f"item-{len(items)+1:02}", "name": name,
@@ -118,8 +129,14 @@ def extract(pdf_path):
                         variant = text.startswith(("Vanille /", "Avoine (", "Classique /"))
                         if current and (size < 11.8 or variant):
                             current["description"] = (current["description"] + " " + text).strip()
+                        elif current and (text[:1].islower() or text == "Teatower"):
+                            # Same-size wrapped product names belong to the preceding
+                            # price, unlike a capitalized new name priced on line 2.
+                            current["name"] += " " + text
                         elif category:
                             pending.append(text)
+                if len(items) == count_before:
+                    raise ValueError(f"Extraction incomplète : colonne sans produit à la page {page_number}.")
                 if pending:
                     raise ValueError("Texte sans prix à vérifier : " + " / ".join(pending))
     return items
@@ -158,3 +175,4 @@ if __name__ == "__main__":
         build(args.pdf, args.output_dir)
     else:
         parser.error("Choisir --check ou --output-dir.")
+

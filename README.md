@@ -32,19 +32,20 @@ en temps réel, ni l’absence d’allergènes. Ils n’envoient pas d’email e
 réservent pas de table. La prise en charge WebMCP dépend du navigateur et de
 l’agent ; ajouter ce code ne l’active pas dans un navigateur non compatible.
 
-## État initial de la carte : attention au PDF ancien
+## Carte et cohérence des données
 
-Lors de l’intégration, `Menu.pdf` était une ancienne carte (printemps), différente
-des deux images affichées par `menu.html` (notamment Americano et Toast Fig Kiss).
-Il n’a pas été remplacé. `menu.json` contient les 55 articles et suppléments
-vérifiés dans les **images affichées**, avec leur provenance. Tant que ce décalage
-existe, l’outil renvoie la page et les images comme sources, jamais l’ancien PDF
-comme référence de la carte actuelle.
+`Menu.pdf`, les deux images affichées par `menu.html` et `menu.json` sont générés
+ensemble à partir de la carte fournie. Les données JSON sont publiques mais ne
+s’affichent pas dans la page. `search_menu` vérifie les empreintes des trois
+sources avant de répondre ; un fichier remplacé seul rend la recherche
+indisponible jusqu’à la mise à jour du paquet complet.
 
-Les données JSON sont publiques mais ne s’affichent pas dans la page. Aucun texte
-invisible n’a été ajouté. `search_menu` vérifie les empreintes du PDF et des deux
-images avant de répondre. Si un de ces fichiers change seul, il signale une
-indisponibilité temporaire au lieu de répondre avec des prix potentiellement périmés.
+L’extraction vérifie que les deux pages et les deux colonnes contiennent des
+produits, que les rubriques principales (cafés, petit-déjeuner, lunch et
+gourmandises) sont présentes et que les deux images sont différentes. Les
+encadrés d’introduction placés au-dessus d’une rubrique sont ignorés sans
+interrompre la lecture de la colonne. La vérification humaine des prix et des
+descriptions reste nécessaire avant publication.
 
 ## Mettre à jour la carte
 
@@ -82,8 +83,10 @@ pas utilisée comme source de la nouvelle carte.
 ## Vérifications
 
 ```sh
+python -m pip install -r scripts/requirements-menu.txt
 python scripts/menu_data.py --check
 node --test tests/agent-tools.test.cjs
+python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 Les tests Node vérifient les recherches, les entrées invalides, le repli sans API,
@@ -99,8 +102,8 @@ navigation vers `menu.html`. Vérifier aussi le site dans un navigateur sans API
 ## Publication et retour arrière
 
 GitHub Pages conserve la branche `main`, dossier racine, et le domaine
-`lastation-genval.be`. Le fichier `CNAME`, le style, les photos, les images de la
-carte et le PDF n’ont pas été modifiés par l’intégration.
+`lastation-genval.be`. Le fichier `CNAME`, le style et les photos de présentation restent indépendants
+des mises à jour de la carte.
 
 Les changements peuvent être intégrés en un commit. Pour revenir en arrière,
 utiliser **Revert** sur ce commit / la pull request, puis attendre la publication
