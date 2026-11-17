@@ -3,28 +3,28 @@
   "currency": "EUR",
   "language": "fr",
   "source": {
-    "method": "verified_visible_images",
-    "pdf_matches_visible_menu": false,
+    "method": "extracted_pdf",
+    "pdf_matches_visible_menu": true,
     "visible_files": [
       "menu-page-1.jpg",
       "menu-page-2.jpg"
     ],
     "files": [
       {
+        "path": "Menu.pdf",
+        "sha256": "a70a1295d2ae79ff61046d718c72296a93bffd3ec1e25fe981bac0ec4f75910e"
+      },
+      {
         "path": "menu-page-1.jpg",
-        "sha256": "11082816a32a3fd32e40ace719a7417ddf6dc88927590be109506e3f46af9801"
+        "sha256": "c382453e84a79316c9ce7577c69605d7720ef20506d49a11f382b51b23fc5bd0"
       },
       {
         "path": "menu-page-2.jpg",
-        "sha256": "9efa943f75c3a9643eea6a3fdab785a8e5717952b305ab895d1bb7825d39f34c"
-      },
-      {
-        "path": "Menu.pdf",
-        "sha256": "0321a37b5aa52aab2874807196dc8c777650280c03c8a94391bef00f42848b41"
+        "sha256": "6fe35e847cf805d71a891f56cea6892dca7ab47cea29f945b3a541c0c843e6b2"
       }
     ]
   },
-  "note": "Carte affichée sur le site, sans garantie de disponibilité. Les suppléments sont indiqués séparément. Pour les allergènes et les régimes alimentaires, demander à l’équipe. Le PDF actuellement présent dans le dépôt est une ancienne carte ; seules les images affichées font référence.",
+  "note": "Carte publiée, sans garantie de disponibilité. Les suppléments sont indiqués séparément. Pour les allergènes et les régimes alimentaires, demander à l’équipe.",
   "items": [
     {
       "id": "item-01",
@@ -58,7 +58,7 @@
       "name": "Americano",
       "category": "Cafés",
       "description": "",
-      "price": 3.5,
+      "price": 3.2,
       "price_type": "item",
       "source_page": 1
     },
@@ -67,7 +67,7 @@
       "name": "Cappuccino",
       "category": "Cafés",
       "description": "",
-      "price": 4,
+      "price": 4.0,
       "price_type": "item",
       "source_page": 1
     },
@@ -94,7 +94,7 @@
       "name": "Matcha latte",
       "category": "Matchas",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 1
     },
@@ -103,7 +103,7 @@
       "name": "Matcha Genmaicha latte",
       "category": "Matchas",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 1
     },
@@ -112,7 +112,7 @@
       "name": "Hojicha latte",
       "category": "Matchas",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 1
     },
@@ -136,10 +136,10 @@
     },
     {
       "id": "item-13",
-      "name": "+ 1 shot espresso",
+      "name": "Extra shot espresso",
       "category": "Extras boissons",
       "description": "",
-      "price": 1,
+      "price": 1.5,
       "price_type": "supplement",
       "source_page": 1
     },
@@ -147,7 +147,7 @@
       "id": "item-14",
       "name": "Version déca",
       "category": "Extras boissons",
-      "description": "Offert",
+      "description": "",
       "price": 0,
       "price_type": "supplement",
       "source_page": 1
@@ -157,13 +157,13 @@
       "name": "Sélection de thés et infusions Teatower",
       "category": "Thés et infusions",
       "description": "",
-      "price": 4,
+      "price": 4.0,
       "price_type": "item",
       "source_page": 1
     },
     {
       "id": "item-16",
-      "name": "Boost detox (chaud ou glacé)",
+      "name": "Boost détox (chaud ou froid)",
       "category": "Thés et infusions",
       "description": "",
       "price": 4.5,
@@ -199,6 +199,24 @@
     },
     {
       "id": "item-20",
+      "name": "Jus de pomme bio et épices chaud maison",
+      "category": "Les doudous",
+      "description": "",
+      "price": 5.0,
+      "price_type": "item",
+      "source_page": 1
+    },
+    {
+      "id": "item-21",
+      "name": "Pumpkin spice latte",
+      "category": "Les doudous",
+      "description": "",
+      "price": 5.5,
+      "price_type": "item",
+      "source_page": 1
+    },
+    {
+      "id": "item-22",
       "name": "Babyccino",
       "category": "Kids only — boissons",
       "description": "",
@@ -207,25 +225,16 @@
       "source_page": 1
     },
     {
-      "id": "item-21",
+      "id": "item-23",
       "name": "Thé glacé maison",
       "category": "Boissons fraîches",
       "description": "",
-      "price": 4,
+      "price": 4.0,
       "price_type": "item",
       "source_page": 1
     },
     {
-      "id": "item-22",
-      "name": "Infusion glacée maison",
-      "category": "Boissons fraîches",
-      "description": "",
-      "price": 4,
-      "price_type": "item",
-      "source_page": 1
-    },
-    {
-      "id": "item-23",
+      "id": "item-24",
       "name": "Paola Cola",
       "category": "Boissons fraîches",
       "description": "Classique / Zéro",
@@ -234,7 +243,7 @@
       "source_page": 1
     },
     {
-      "id": "item-24",
+      "id": "item-25",
       "name": "Kombucha TAO Botanic",
       "category": "Boissons fraîches",
       "description": "",
@@ -243,7 +252,7 @@
       "source_page": 1
     },
     {
-      "id": "item-25",
+      "id": "item-26",
       "name": "Jus de pomme",
       "category": "Boissons fraîches",
       "description": "",
@@ -252,7 +261,7 @@
       "source_page": 1
     },
     {
-      "id": "item-26",
+      "id": "item-27",
       "name": "Eau plate / pétillante 25cl",
       "category": "Boissons fraîches",
       "description": "",
@@ -261,16 +270,16 @@
       "source_page": 1
     },
     {
-      "id": "item-27",
+      "id": "item-28",
       "name": "Eau plate / pétillante 50cl",
       "category": "Boissons fraîches",
       "description": "",
-      "price": 4,
+      "price": 4.0,
       "price_type": "item",
       "source_page": 1
     },
     {
-      "id": "item-28",
+      "id": "item-29",
       "name": "Trottinette sans alcool IPA 0°",
       "category": "Bières",
       "description": "",
@@ -279,26 +288,26 @@
       "source_page": 1
     },
     {
-      "id": "item-29",
-      "name": "Bertinchamps blanche framboise 4.2°",
+      "id": "item-30",
+      "name": "Bertinchamps blanche framboise 4,2°",
       "category": "Bières",
       "description": "",
       "price": 4.5,
-      "price_type": "item",
-      "source_page": 1
-    },
-    {
-      "id": "item-30",
-      "name": "Lutgarde blonde 6°",
-      "category": "Bières",
-      "description": "",
-      "price": 5,
       "price_type": "item",
       "source_page": 1
     },
     {
       "id": "item-31",
-      "name": "Mobius blanche bio 4.5°",
+      "name": "Lutgarde blonde 6°",
+      "category": "Bières",
+      "description": "",
+      "price": 5.0,
+      "price_type": "item",
+      "source_page": 1
+    },
+    {
+      "id": "item-32",
+      "name": "Mobius blanche bio 4,5°",
       "category": "Bières",
       "description": "",
       "price": 4.5,
@@ -306,34 +315,34 @@
       "source_page": 1
     },
     {
-      "id": "item-32",
-      "name": "Mobius IPA dry hopping bio 6.5°",
-      "category": "Bières",
-      "description": "",
-      "price": 5,
-      "price_type": "item",
-      "source_page": 1
-    },
-    {
       "id": "item-33",
-      "name": "Mobius triple bio 8.5°",
+      "name": "Mobius IPA dry hopping bio 6,5°",
       "category": "Bières",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 1
     },
     {
       "id": "item-34",
-      "name": "Rouge / Blanc / Rosé",
-      "category": "Vins au verre",
+      "name": "Mobius triple bio 8,5°",
+      "category": "Bières",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 1
     },
     {
       "id": "item-35",
+      "name": "Rouge / Blanc / Rosé",
+      "category": "Vins au verre",
+      "description": "",
+      "price": 5.0,
+      "price_type": "item",
+      "source_page": 1
+    },
+    {
+      "id": "item-36",
       "name": "Sunrise Bowl",
       "category": "Petit-déjeuner",
       "description": "Yaourt bio nature, granola maison, fruits frais et confiture",
@@ -346,7 +355,7 @@
       }
     },
     {
-      "id": "item-36",
+      "id": "item-37",
       "name": "Chia la vie, chia l’amore !",
       "category": "Petit-déjeuner",
       "description": "Pudding de chia maison au lait de coco, confiture, fruits frais, noix de coco râpée et granola maison",
@@ -359,24 +368,11 @@
       }
     },
     {
-      "id": "item-37",
+      "id": "item-38",
       "name": "Assiette matin câlin",
       "category": "Petit-déjeuner",
-      "description": "Pain et beurre de campagne, confiture",
-      "price": 6,
-      "price_type": "item",
-      "source_page": 2,
-      "service_hours": {
-        "opens": "07:00",
-        "closes": "11:30"
-      }
-    },
-    {
-      "id": "item-38",
-      "name": "Assiette des bons copains",
-      "category": "Petit-déjeuner",
-      "description": "Pain et beurre de campagne, Comté AOP et jambon",
-      "price": 8,
+      "description": "Pain au levain, beurre de campagne et confiture",
+      "price": 6.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -386,10 +382,10 @@
     },
     {
       "id": "item-39",
-      "name": "Oh my egg!",
+      "name": "Assiette des bons copains",
       "category": "Petit-déjeuner",
-      "description": "2 œufs bio au plat ou brouillés, pain et beurre de campagne, jambon ou Comté AOP",
-      "price": 10.5,
+      "description": "Pain au levain, beurre de campagne, Comté AOP et jambon",
+      "price": 8.5,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -399,23 +395,36 @@
     },
     {
       "id": "item-40",
-      "name": "P’tit croque jambon & fromage",
-      "category": "Kids only — à manger",
-      "description": "",
-      "price": 8,
+      "name": "Hot breakfast croissant",
+      "category": "Petit-déjeuner",
+      "description": "Croissant pur beurre sorti du four, gouda, jambon, œuf brouillé",
+      "price": 9.5,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
-        "opens": "12:00",
-        "closes": "14:00"
+        "opens": "07:00",
+        "closes": "11:30"
       }
     },
     {
       "id": "item-41",
-      "name": "P’tite soupe",
+      "name": "Oh my egg!",
+      "category": "Petit-déjeuner",
+      "description": "2 œufs bio au plat ou brouillés, pain au levain, beurre de campagne, jambon ou Comté AOP",
+      "price": 10.5,
+      "price_type": "item",
+      "source_page": 2,
+      "service_hours": {
+        "opens": "07:00",
+        "closes": "11:30"
+      }
+    },
+    {
+      "id": "item-42",
+      "name": "P’tit croque jambon & fromage",
       "category": "Kids only — à manger",
-      "description": "Pain et beurre de campagne",
-      "price": 6,
+      "description": "",
+      "price": 8.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -424,7 +433,20 @@
       }
     },
     {
-      "id": "item-42",
+      "id": "item-43",
+      "name": "P’tite soupe",
+      "category": "Kids only — à manger",
+      "description": "Pain et beurre de campagne",
+      "price": 6.5,
+      "price_type": "item",
+      "source_page": 2,
+      "service_hours": {
+        "opens": "12:00",
+        "closes": "14:00"
+      }
+    },
+    {
+      "id": "item-44",
       "name": "Cookie",
       "category": "Gourmandises",
       "description": "",
@@ -433,7 +455,7 @@
       "source_page": 2
     },
     {
-      "id": "item-43",
+      "id": "item-45",
       "name": "Part de cake",
       "category": "Gourmandises",
       "description": "",
@@ -442,59 +464,29 @@
       "source_page": 2
     },
     {
-      "id": "item-44",
-      "name": "Cinnamon bun (Gérard Bakery)",
+      "id": "item-46",
+      "name": "Fondant au chocolat sans gluten",
       "category": "Gourmandises",
       "description": "",
-      "price": 5,
+      "price": 5.0,
       "price_type": "item",
       "source_page": 2
     },
     {
-      "id": "item-45",
-      "name": "Tarte végé ou carné",
-      "category": "Lunch",
-      "description": "De chez « Tout prêt Tout près ». Les légumes sont de saison, bio et sourcés localement.",
-      "price": 14,
-      "price_type": "item",
-      "source_page": 2,
-      "service_hours": {
-        "opens": "12:00",
-        "closes": "14:00"
-      }
-    },
-    {
-      "id": "item-46",
-      "name": "Toast Sun Kiss",
-      "category": "Lunch",
-      "description": "Pain d’épeautre intégral, ricotta fouettée à la fleur de sel, tomates rôties à l’ail, huile d’olive, crème de balsamique et basilic",
-      "price": 14,
-      "price_type": "item",
-      "source_page": 2,
-      "service_hours": {
-        "opens": "12:00",
-        "closes": "14:00"
-      }
-    },
-    {
       "id": "item-47",
-      "name": "Toast Avocado Crush",
-      "category": "Lunch",
-      "description": "Pain d’épeautre intégral, avocat, cottage cheese, tomates cerises et flocons de piment",
-      "price": 15,
+      "name": "Cinnamon bun (Gérard Bakery)",
+      "category": "Gourmandises",
+      "description": "",
+      "price": 5.0,
       "price_type": "item",
-      "source_page": 2,
-      "service_hours": {
-        "opens": "12:00",
-        "closes": "14:00"
-      }
+      "source_page": 2
     },
     {
       "id": "item-48",
-      "name": "Toast Fig Kiss",
+      "name": "Tarte végé ou carné",
       "category": "Lunch",
-      "description": "Pain d’épeautre intégral, chèvre frais, figues fraîches, jambon cru, noix, crème de balsamique et roquette",
-      "price": 15,
+      "description": "De chez “Tout prêt Tout près”. Les légumes sont de saison, bio et sourcés localement. On adore !",
+      "price": 14.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -504,10 +496,10 @@
     },
     {
       "id": "item-49",
-      "name": "Salade Cap au Sud",
+      "name": "Toast La Bonne Poire",
       "category": "Lunch",
-      "description": "Orzo, houmous, concombres, tomates cerises, olives kalamata, feta émiettée et pickles d’oignons rouges",
-      "price": 14,
+      "description": "Pain paysan au levain, chèvre frais, poire rôtie, noix, miel et thym",
+      "price": 15.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -517,10 +509,10 @@
     },
     {
       "id": "item-50",
-      "name": "La César de La Station",
+      "name": "Le Toast Madame",
       "category": "Lunch",
-      "description": "Salade romaine, œufs durs, filet de poulet, croutons maison, pickles d’oignons rouges, sauce César La Station au parmesan (sans anchois)",
-      "price": 15,
+      "description": "Pain paysan au levain, jambon, gouda, béchamel La Station et emmental râpé. Le tout gratiné au four",
+      "price": 15.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -530,10 +522,10 @@
     },
     {
       "id": "item-51",
-      "name": "Salade Sous les Figuiers",
+      "name": "Toast You Melt my Day",
       "category": "Lunch",
-      "description": "Salade de blé, chèvre frais, figues fraîches, jambon cru, noix, crème de balsamique, vinaigrette au miel",
-      "price": 15,
+      "description": "Pain paysan au levain, raclette fondante, oignons caramélisés, jambon cru, cornichons et petits oignons vinaigrés",
+      "price": 15.0,
       "price_type": "item",
       "source_page": 2,
       "service_hours": {
@@ -543,6 +535,19 @@
     },
     {
       "id": "item-52",
+      "name": "Salade Autumn Crush",
+      "category": "Lunch",
+      "description": "Salade de blé, quinoa, butternut rôtie, houmous de butternut, feta émiettée, airelles séchées, noisettes torrefiées, vinaigrette balsamique",
+      "price": 15.0,
+      "price_type": "item",
+      "source_page": 2,
+      "service_hours": {
+        "opens": "12:00",
+        "closes": "14:00"
+      }
+    },
+    {
+      "id": "item-53",
       "name": "Soupe du jour",
       "category": "Lunch",
       "description": "Pain et beurre de campagne",
@@ -555,7 +560,7 @@
       }
     },
     {
-      "id": "item-53",
+      "id": "item-54",
       "name": "Œuf au plat ou brouillé bio (1)",
       "category": "Extras lunch",
       "description": "",
@@ -564,7 +569,7 @@
       "source_page": 2
     },
     {
-      "id": "item-54",
+      "id": "item-55",
       "name": "Jambon",
       "category": "Extras lunch",
       "description": "",
@@ -573,12 +578,21 @@
       "source_page": 2
     },
     {
-      "id": "item-55",
+      "id": "item-56",
       "name": "Comté AOP",
       "category": "Extras lunch",
       "description": "",
-      "price": 3,
+      "price": 3.0,
       "price_type": "supplement",
+      "source_page": 2
+    },
+    {
+      "id": "item-57",
+      "name": "Mix & Match !",
+      "category": "Formules lunch",
+      "description": "Compose ton duo : ½ toast au choix accompagné de la soupe du jour",
+      "price": 15.0,
+      "price_type": "item",
       "source_page": 2
     }
   ]
